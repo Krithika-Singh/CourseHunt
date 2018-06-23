@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<style>
+ .sign_up{
+border-radius:5px;
+background:purple;
+padding:10px;
+width : 420px;
+margin:auto;
+color:#fff;
+font-size:16px;
+font-family:Verdana;
+margin-top:100px;
+opacity:0.6;
+}
+.sign_up h1{
+text-align:center;
+paddin-top:50px;
+margin:0;
+padding:10;
+}
+
+h3 {
+   aligh:center;
+   font-size:15px;
+}
+
+.Stdregistration,
+.Instregistration {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    
+    background-color: rgba(0,0,0,0.3); 
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    cursor: pointer;
+}
+.Stdregistration-header,
+.Instregistration-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+.Stdregistration-body,
+.Instregistration-body {padding: 2px 16px;}
+</style>
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+ <h3> REGISTER AS</h3><br>
+  <button id="button">Institute</button>
+<div id="Institute" class="Instregistration">
+<div class="Instregistration-content">
+    <div class="Instregistration-header">
+      <span class="close">&times;</span>
+      
+    </div>
+    <div class="Instregistration-body">
+   
+    <div class = "sign_up">
+    	<h1>INSTITUTION REGISTRATION </h1>
+     <form action="InstituteRegistration" method="post">
+      <br><input type="text" name="name" placeholder="Name"><br>
+      <br><input type="email" name="email" placeholder="email"><br><br>
+      <input type="text" name="contact" placeholder="contact"><br><br>
+      <input type="text" name="location" placeholder="location"><br><br>  			
+      <input type="text" name="uname" placeholder="User Name"><br><br>
+	  <input type="password" name="pwd" placeholder="password"><br><br>
+	  <input type="text" name="timing" placeholder="Timings"><br><br>
+	  <input type="int" name="vacancy" placeholder="Vacancy"><br><br>
+	  <button class="button2">submit</button><br><br><br>
+	  </form>
+    </div>
+    </div>
+  </div>
+
+</div>
+<button id="button1">Student</button>
+<div id="Student" class="Stdregistration">
+<div class="Stdregistration-content">
+    <div class="Stdregistration-header">
+      <span class="close1">&times;</span>
+    
+    </div>
+    <div class="Stdregistration-body">
+    <div class = "sign_up">
+    	<h1>STUDENT REGISTRATION </h1>
+     <form action="StudentRegistration" method="post"><br><br>
+      <input type="text" name="name" placeholder="Name"><br><br>
+      <input type="email" name="email" placeholder="email"><br><br>
+      <input type="text" name="contact" placeholder="contact"><br><br>
+      <input type="text" name="location" placeholder="location"><br><br>	
+      <input type="text" name="uname" placeholder="User Name"><br><br>
+	  <input type="password" name="pwd" placeholder="password"><br><br>
+	  <button class="button2">Submit</button><br><br><br>
+	  </form>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+var modal = document.getElementById('Institute');
+var btn = document.getElementById("button");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+var modal1 = document.getElementById('Student');
+var btn1 = document.getElementById("button1");
+var span1= document.getElementsByClassName("close1")[0];
+btn1.onclick = function() {
+    modal1.style.display = "block";
+}
+span1.onclick = function() {
+    modal1.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+</script>
+    </center>
+    
+  </article>
+</section>
+
+
+</body>
+</html>
+
