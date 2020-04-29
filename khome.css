@@ -2,6 +2,10 @@
 	margin:0px;
 	padding:0px;
 }
+
+a{
+	color:black;
+}
 .bgimage {
 	background-image:url('ui4.jpg');
 	background-size:100% 110%;

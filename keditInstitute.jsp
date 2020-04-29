@@ -5,16 +5,16 @@
 <head>
 <style>
 body{
-background:url(ui9.jpg);
+background:url(homePageBGBlur2.jpg);
 background-size:cover;
 }
 .sign_up{
 border-radius:5px;
-background:purple;
+background:white;
 padding:10px;
 width : 420px;
 margin:auto;
-color:#fff;
+color:black;
 font-size:16px;
 font-family:Verdana;
 margin-top:100px;

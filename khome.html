@@ -1,31 +1,361 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title></title>
-<link rel = "stylesheet" type = "text/css" href="khome.css">
-<link href = 'http://fonts.googleapis.com/css?family = Montserrat:400,700%7CPT+Serif:400,700,400italic' rel = 'stylesheet'>
-<link href = "https://fonts.googleapis.com/css?family = Montserrat|open+Sans" rel = "stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+function Validate(form, val) {
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var nameFormat = /^[A-Za-z]+([\s][A-Za-z]+)*;
+var pwdFormat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+var phoneFormat = /^[6789]\d{9}$/;
+if(val == '1') {
+var name_val = document.form1.name.value;
+var email_val = document.form1.email.value;
+var pwd_val = document.form1.pwd.value;
+var phoneno = document.form1.contact.value;
+if(!name_val.match(nameFormat)) {
+alert("please enter valid name!");
+document.form1.name.focus();
+return false;
+}
+if(!email_val.match(mailformat)) {
+alert("Please enter valid email id!");
+document.form1.email.focus();
+return false;
+}
+if(!pwd_val.match(pwdFormat)) {
+alert("please choose strong password:\n- atleast one special character\n- atleast one capital alphabet\n- atleast one number\n- minimum length of 8");
+document.form1.pwd.focus();
+return false;
+}
+if(!phoneno.match(phoneFormat)) {
+alert("Please enter valid phone number!");
+document.form2.email.focus();
+return false;
+}
+
+} else {
+var name_val = document.form2.name.value;
+var email_val = document.form2.email.value;
+var pwd_val = document.form2.pwd.value;
+var phoneno = document.form2.contact.value;
+if(!name_val.match(nameFormat)) {
+alert("please enter valid name!");
+document.form2.name.focus();
+return false;
+}
+if(!email_val.match(mailformat)) {
+alert("Please enter valid email id!");
+document.form2.email.focus();
+return false;
+}
+if(!pwd_val.match(pwdFormat)) {
+alert("please choose strong password:\n- atleast one special character\n- atleast one capital alphabet\n- atleast one number\n- minimum length of 8");
+document.form1.pwd.focus();
+return false;
+}
+if(!phoneno.match(phoneFormat)) {
+alert("Please enter valid phone number!");
+document.form2.email.focus();
+return false;
+}
+
+}
+
+return true;
+}
+</script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Buttons arrangement */
+.buttonContainer {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  border: 20px solid #ccc;
+  border-radius: 50%;
+ text-align:center;
+ margin-top:180px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email],input[type=int]{
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 8px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #F6BC05;
+  border-radius: 12px;
+  color: black;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 5px solid #F9A704;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+ 
+}
+
+h2 {
+text-align:center;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: 40%;
+  border: 5px solid #F63E0C;
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Buttons arrangement */
+.buttonContainer {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  border: 20px solid #ccc;
+  border-radius: 50%;
+ text-align:center;
+ margin-top:180px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #95908D;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 10px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+\  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+ 
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
 </head>
-<body>
-   <div class = "bgimage">
-   <div class = "menu">
-   <div class = "leftmenu">
-   <h4>HOME</h4>
-   </div>
-   <div class = "rightmenu">
-   <ul>
-   <li></li>
-   </ul>
-   </div>
-   
-   <div class = "text">
-     <h4>Better place for learning</h4>
-     <h1>COURSE HUNT</h1>
-     <h3>We provide easy way to find and learn</h3><br><br><br><br><br>
-     <a href ="klogin.html">SIGN IN</a><br><br>
-     <a href="kregister.html">SIGN UP</a>
-   
-   </div>
+<body background="homePageBGBlur2.jpg">
+
+<div class="buttonContainer">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button><br><br>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup As Student</button><br><br>
+<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Signup As Institute</button>
+</div>
+
+<div id="id01" class="modal">
+ 
+  <form class="modal-content animate" action="LoginServlet" method="post">
+<h2>Login Here</h2>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Lock.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="pwd"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pwd" required>
+       
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <!-- span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+ 
+  <form name = "form1" class="modal-content animate" action="StudentRegistration" method="post">
+<h2>Register As Student</h2>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="StudentIconMale.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+<label for="name"><b>Full Name</b></label>
+<input type="text" placeholder="Enter Full Name" name="name" required>
+
+<label for="email"><b>Email ID</b></label>
+<input type="email" placeholder="Enter Email ID" name="email" required>
+
+<label for="contact"><b>Mobile No</b></label>
+<input type="text" placeholder="Enter Mobile No." name="contact" required>
+
+<label for="location"><b>Location</b></label>
+<input type="text" placeholder="Enter City" name="location" required>
+
+<label for="uname"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="uname" required>
+
+<label for="pwd"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="pwd" required>
+       
+      <button type="submit" onclick = "return Validate(this,'1')">Sign up</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div id="id03" class="modal">
+ 
+  <form name = "form2" class="modal-content animate" action="InstituteRegistration" method="post">
+<h2>Register As Institue</h2>
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="CollegeIcon.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+<label for="name"><b>Institute Name</b></label>
+<input type="text" placeholder="Enter Full Name" name="name" required>
+
+<label for="email"><b>Email ID</b></label>
+<input type="email" placeholder="Enter Email ID" name="email" required>
+
+<label for="contact"><b>Mobile No</b></label>
+<input type="text" placeholder="Enter Mobile No." name="contact" required>
+
+<label for="location"><b>Location</b></label>
+<input type="text" placeholder="Enter City" name="location" required>
+
+<label for="uname"><b>UserName</b></label>
+<input type="text" placeholder="Enter Username" name="uname" required>
+
+<label for="pwd"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="pwd" required>
+
+<label for="timing"><b>Timings</b></label>
+<input type="text" placeholder="Enter Timings" name="timing" required>
+
+<label for="vacancy"><b>Vacancy</b></label>
+<input type="int" placeholder="Enter vacancy" name="vacancy" required>
+
+       
+      <button type="submit" onclick = "return Validate(form2,'0')">Sign up</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal1 = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+if (event.target == modal3) {
+        modal3.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
+
+

@@ -4,45 +4,44 @@
 <html>
 <head>
 <style>
+th td{
+border-bottom: 1px solid;
+border-radius: 90px;
+background-color: #D7DBDE;
+text-align:center;
+}
+
+tr {
+background-color: #D7DBDE;
+border-radius: 90px;
+text-align:center;
+}
 
 h1{
-  font-size: 50px;
-  color: #fff;
+  font-size: 60px;
+  color:#FFE87C;
   text-transform: uppercase;
   font-weight: 250;
   text-align: center;
   margin-bottom: 15px;
 }
 table{
-  width:100%;
+  width:98%;
+  height:98%;
   table-layout: fixed;
 }
-.tbl-header{
-  background-color: rgba(255,255,255,0.3);
- }
-.tbl-content{
-  height:1x;
-  overflow-x:auto;
-  margin-top: 0px;
-  border: 1px solid rgba(255,255,255,0.3);
+
+.tableContainer {
+width : 480px;
+height:500px;
+ padding:20px;
+ border: 15px solid #F6BC05;
+ font-family: arial, sans-serif;
+ border-radius:98px;
+ margin-left:400px;
 }
-th{
-  padding: 20px 15px;
-  text-align: left;
-  font-weight: 500;
-  font-size: 15px;
-  color: #fff;
-  text-transform: uppercase;
-}
-td{
-  padding: 15px;
-  text-align: left;
-  vertical-align:middle;
-  font-weight: 300;
-  font-size: 15px;
-  color: #fff;
-  border-bottom: solid 1px rgba(255,255,255,0.1);
-}
+
+
 
 
 /* demo styles */
@@ -51,94 +50,47 @@ td{
 body{
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   background: linear-gradient(to right, #25c481, #25b7c4);
-  background:url(up2.jpeg);
+  background:url("homePageBGBlur2.jpg");
   font-family: 'Roboto', sans-serif;
 }
-section{
-  margin: 50px;
-}
-
-
-/* follow me template */
-.made-with-love {
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: arial;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #F50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
-}
-
-
-/* for custom scrollbar for webkit browser*/
-
-::-webkit-scrollbar {
-    width: 6px;
-} 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-} 
-::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-}
+#back{
+  width: 10px;
+  height: 10px;
+  padding:8px;
+  border-radius:95px;
+  border: 20px solid #D7DBDE;
+ text-align:center;
+ font-family: arial, sans-serif;
+ background-color:#F5F9FB ;
+ color: #3C5B6F;
+ margin-left:620px;
+ margin-bottom:0px
+ }
 </style>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Insert title here</title>
 </head>
 <body>
 <br><br>
 <h1><italic>Student Profile</italic></h1><br><br><br>
 	<section>
-		<div class="tbl-header">
-		<table cellpadding="0" cellspacing="0" border="0">
-		<thead>
-		<tr>
-			<th>Student Id</th>
-			<th>Student Name</th>
-			<th>User Name</th>
-			<th>Password</th>
-			<th>Email</th>
-			<th>Contact</th>
-			<th>Location</th>
-			<th>Edit</th>
-		</tr>
-		</thead>
-		<table>
+		<div class="tableContainer">
+			<table>
+				<tbody>
+
+					<tr><th>Student Id</th><td>${stud.stuId }</td></tr>
+					<tr><th>Student Name</th><td>${stud.sname }</td></tr>
+					<tr><th>User Name</th><td>${stud.userName }</td></tr>
+					<th>Email</th><td>${stud.email }</td></tr>
+					<tr><th>Contact</th><td>${stud.contact}</td></tr>
+					<tr><th>Location</th><td>${stud.location}</td></tr>
+					<tr><th>Edit</th><td><a href="StudentEditServlet?stud_id=${stud.stuId}">Edit</a></td></tr>
+				</tbody>
+			</table>
 		</div>
-		<div class="tbl-content">
-		<table cellpadding="0" cellspacing="0" border="0">
-		<tbody>
-		<tr>
-		
-				<td>${stud.stuId }</td>
-				<td>${stud.sname }</td>
-				<td>${stud.userName }</td>
-				<td>${stud.password }</td>
-				<td>${stud.email }</td>
-				<td>${stud.contact}</td>
-				<td>${stud.location}</td>		
-				<td><a href="StudentEditServlet?stud_id=${stud.stuId}">Edit</a></td>
-				
-		</tr>
-		</tbody>
-		
-	</table>
-	</div>
 	</section>
+	<a id="back" href = "kstudentpanel.jsp"><i class='fas fa-home'></i></a>
 </body>
 </html>
