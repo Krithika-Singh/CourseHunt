@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Saira Stencil One' rel='stylesheet'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Saira Stencil One' rel='stylesheet'>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  padding: 1px;
+  text-align: center;
+  font-family: 'Saira Stencil One';
+  font-size: 70px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+img {
+  border-radius: 50%;
+}
+
+p.indent {
+  padding-right: 5.5em 
+ }
+ 
+.buttonContainer {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  border: 20px solid #ccc;
+  border-radius: 50%;
+ text-align:center;
+ margin-top:180px;
+}
+button {
+  background-color: #F6BC05;
+  border-radius: 12px;
+  color: black;
+  font-size: 15px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 5px solid #F9A704;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+  
+}
+.right {
+  color: black;
+  font-size: 15px;
+  padding: 14px 20px;
+  cursor: pointer;
+  width: 25%;
+  height :20px
+}
+
+
+</style>
+</head>
+<body background="homePageBGBlur2.jpg">
+<div class = "right">
+<form action="LogOutServlet">
+    <button class = "button">Logout<i class='fas fa-power-off'></i></button>
+    </form><br><br>
+</div>
+<header>
+  <h3>ADMIN</h3>
+</header>
+<basefont size=8>
+	
+<section>
+     <form action="Admin_Institutes_Servlet">
+    <button class="button">Institutions</button>
+    </form><br><br><br>
+    <form action = "Admin_Students_Servlet">
+    <button class="button">Students</button>
+    </form><br><br><br>
+    <form action = "Admin_Courses_Servlet">
+    <button class="button">Courses</button>
+    </form>
+    
+    
+</section>
+
+</body>

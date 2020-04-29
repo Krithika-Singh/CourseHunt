@@ -5,16 +5,16 @@
 <head>
 <style>
 body{
-background:url(ui9.jpg);
+background:url(homePageBGBlur2.jpg);
 background-size:cover;
 }
 .sign_up{
 border-radius:5px;
-background:purple;
+background:#fff;
 padding:20px;
 width : 420px;
 margin:auto;
-color:#fff;
+color:black;
 font-size:16px;
 font-family:Verdana;
 margin-top:100px;
@@ -70,7 +70,7 @@ transition:0.6s;
 <body>
 
 <div class = "sign_up">
-<form>
+<form action="StudentUpdateServlet" method="post" align = center>
 <h1>Update Details</h1>
 <hr>
 <input type="text" name="stuId" value=${sdetails.stuId} readOnly=true><br>
@@ -78,7 +78,7 @@ transition:0.6s;
 <input type="text" name="email" value=${sdetails.email}><br/>
 <input type="text" name="contact" value=${sdetails.contact}><br/>
 <input type="text" name="location" value=${sdetails.location}><br/>
-<a href="kstudentpanel.jsp">update</a>
+<!--a href="kstudentpanel.jsp">update</a-->
 <input type="submit" class = "button" value="UPDATE">
 
 </form>

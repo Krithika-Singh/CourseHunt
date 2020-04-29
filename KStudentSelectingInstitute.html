@@ -42,6 +42,30 @@ input[type="submit"]:hover
 	background:#2B1B17;
 	color:#262626;
 }
+
+input[type="button"]:hover
+{
+	background:#2B1B17;
+	color:#262626;
+}
+
+button:hover
+{
+	background:#2B1B17;
+	color:#262626;
+}
+
+input[type="button"]{
+border:none;
+	outline:none;
+	height:60px;
+	color:#fff;
+	font-size:25px;
+	background:#0C090A;
+	cursor:pointer;
+	border-radius:20px;
+	
+}
  input[type='radio']:after {
         width: 1.5em;
         height: 1.5em;
@@ -71,7 +95,16 @@ input[type="submit"]:hover
         visibility: visible;
         border: 2px solid white;
     }
-
+button {
+border:none;
+	outline:none;
+	height:60px;
+	color:#fff;
+	font-size:25px;
+	background:#0C090A;
+	cursor:pointer;
+	border-radius:20px;
+}
 divleft {
     float: left;
     width: 20%;
@@ -184,30 +217,27 @@ footer {
 </style>
 </head>
 <body bgcolor="black">
+
 <header>
   <h2><font face="teal">SELECT A COURSE</font></h2>
 </header>
-
+<form action="kstudentpanel.jsp">
+     <button onClick="kstudentpanel.jsp">Back</button>
+</form>
 <section>
-   <divleft>
-     <form action="ShowInstitutions"  method="POST">
-       <br><br> 
+   <divleft> 
      <form action="ShowInstitutions" method="post">
-     <input type="radio" name="type" class="big" value="1001"><font size="5">C</font><br><br>
-     <input type="radio" name="type"  class="big"value="1002"><font size="5">C++</font><br><br>
-     <input type="radio" name="type"  class="big"value="1003"><font size="5">JAVA</font><br><br>
-     <input type="radio" name="type"  class="big"value="1004"><font size="5">CAT</font><br><br>
-     <input type="radio" name="type"  class="big"value="1005"><font size="5">GATE</font><br><br>
+     <input type="radio" name="type" class="big" value="1001"><font size="5">Mobile Development</font><br><br>
+     <input type="radio" name="type"  class="big" value="1002"><font size="5">C++</font><br><br>
+     <input type="radio" name="type"  class="big" value="1003"><font size="5">JAVA</font><br><br>
+     <input type="radio" name="type"  class="big" value="1004"><font size="5">CAT</font><br><br>
+     <input type="radio" name="type"  class="big" value="1005"><font size="5">GATE</font><br><br>
      <input type="radio" name="type" class="big" value="1006"><font size="5">PYTHON</font><br><br>
-     <input type="radio" name="type"  class="big"value="1007"><font size="5">ADVANCE JAVA</font><br><br>
-     <input type="radio" name="type"  class="big"value="1008"><font size="5">WEB DESIGNING</font><br><br><br>
-    <center> <input type="submit" naame="c" value="Check"> </center>
-    
-        
-     </form>
-          
-    
-      
+     <input type="radio" name="type"  class="big" value="1007"><font size="5">ADVANCE JAVA</font><br><br>
+     <input type="radio" name="type"  class="big" value="1008"><font size="5">WEB DESIGNING</font><br><br><br>
+     &nbsp&nbsp&nbsp&nbsp&nbsp
+     <input type="submit" naame="c" value="Check">&nbsp&nbsp&nbsp&nbsp
+     </form>      
    </divleft>
    
    <divright>
